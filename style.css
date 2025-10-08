@@ -102,3 +102,72 @@ body {
     color: var(--roxo-principal);
     margin-top: 30px;
     margin-bottom: 15px;
+
+/* ESTILOS DA SEÇÃO PROJETOS */
+.projetos-section {
+    background-color: var(--branco); /* Fundo branco para destacar os cards */
+}
+
+.projetos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* 2 ou 3 colunas */
+    gap: 30px;
+    margin-top: 50px;
+    justify-content: center;
+}
+
+.projeto-card {
+    background-color: var(--cinza-fundo);
+    border: 1px solid var(--cinza-detalhe);
+    border-top: 5px solid var(--roxo-principal);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s;
+}
+
+.projeto-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.projeto-card h3 {
+    color: var(--roxo-principal);
+    font-size: 1.6em;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.projeto-card p {
+    font-size: 1em;
+    margin-bottom: 10px;
+}
+
+.projeto-icon {
+    font-size: 2.5em;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.resultado {
+    font-weight: 700;
+    color: var(--cinza-escuro);
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 1px dashed var(--cinza-detalhe);
+}
+
+.chamada-projeto {
+    text-align: center;
+    margin-top: 50px;
+    font-style: italic;
+    color: var(--roxo-principal);
+}
+
+/* Garante que o grid funcione bem em telas menores */
+@media (max-width: 768px) {
+    .projetos-grid {
+        grid-template-columns: 1fr; /* Uma única coluna em telas pequenas */
+    }
+}
+    

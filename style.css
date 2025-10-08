@@ -232,16 +232,30 @@ body {
         margin: 0 10px; /* Reduz o espaçamento horizontal entre os links */
     }
 
-    /* 3. Ajuste Fino nas Imagens */
-    .img-destaque-perfil,
-    .img-destaque-habilidades {
-        margin: 30px auto; /* Reduz a margem das imagens */
-        /* Garante que as imagens não fiquem muito grandes em telas verticais */
-        max-width: 100%; 
-        border-radius: 4px; /* Cantos levemente menos arredondados */
-        box-shadow: none; /* Remove a sombra pesada para um visual mais limpo no celular */
-    }
+/* 3. Ajuste Fino nas Imagens */
+.img-destaque-perfil,
+.img-destaque-habilidades {
+    margin: 30px auto; /* Reduz a margem das imagens */
+    /* Garante que as imagens não fiquem muito grandes em telas verticais */
+    max-width: 100%; 
+    border-radius: 4px; /* Cantos levemente menos arredondados */
+    box-shadow: none; /* Remove a sombra pesada para um visual mais limpo no celular */
+}
 
+/* 3. AJUSTE CORRIGIDO E DEFINITIVO NAS IMAGENS */
+.img-destaque-perfil,
+.img-destaque-habilidades {
+    /* O display: block é crucial para garantir que a max-width funcione */
+    display: block; 
+    max-width: 100%;
+    height: auto; /* Garante que a proporção seja mantida */
+    margin: 30px auto; 
+    padding: 0; /* Remove qualquer padding que possa estar causando overflow */
+    border-radius: 4px; 
+    box-sizing: border-box; /* Garante que padding e border não aumentem a largura */
+    box-shadow: none; /* Mantém o visual limpo no celular */
+}
+    
     /* 4. Layout da Grid de Habilidades (De Colunas para Linhas) */
     .skills-grid {
         flex-direction: column; /* Coloca os cards um abaixo do outro */
@@ -259,3 +273,4 @@ body {
         gap: 20px;
     }
 }
+

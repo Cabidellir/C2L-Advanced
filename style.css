@@ -15,11 +15,21 @@
     box-sizing: border-box;
 }
 
+/* Reset Básico e Fonte */
+* {
+    margin: 0;
+    padding: 0;
+    /* Esta linha é a mais importante para evitar quebra de layout */
+    box-sizing: border-box; 
+}
+
 body {
     font-family: 'Roboto', sans-serif;
     line-height: 1.6;
     color: var(--cinza-escuro);
     background-color: var(--cinza-fundo);
+    /* NOVA REGRA DE SEGURANÇA: Impede rolagem lateral */
+    overflow-x: hidden; 
 }
 
 .container {
@@ -206,6 +216,24 @@ body {
         padding: 40px 0; /* Reduz o espaçamento vertical em telas pequenas */
     }
 
+@media (max-width: 768px) {
+    /* ... outras regras ... */
+
+    /* AJUSTE CORRIGIDO E DEFINITIVO NAS IMAGENS */
+    .img-destaque-perfil,
+    .img-destaque-habilidades {
+        display: block; 
+        max-width: 100%;
+        height: auto; 
+        margin: 30px auto; 
+        padding: 0; 
+        box-sizing: border-box;
+        box-shadow: none; 
+    }
+    
+    /* ... outras regras ... */
+}
+    
     .section h2 {
         font-size: 1.8em; /* Reduz o tamanho do título principal */
         margin-bottom: 30px;
@@ -273,4 +301,5 @@ body {
         gap: 20px;
     }
 }
+
 

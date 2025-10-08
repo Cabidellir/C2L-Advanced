@@ -1,12 +1,11 @@
 /* Paleta de Cores */
 :root {
-    --roxo-principal: #5F5979;   /* Roxo acinzentado (Ametista) */
-    --roxo-claro: #86809A;     /* Um tom mais claro do principal */
-    --cinza-fundo: #F5F5F5;      /* Cinza muito claro para o corpo */
-    --cinza-escuro: #333333;    /* Cinza escuro para texto */
-    --cinza-detalhe: #E0E0E0;   /* Cinza para divisões/bordas */
+    --roxo-principal: #6A1B9A; /* O roxo vibrante original */
+    --roxo-claro: #9C27B0;   /* O roxo mais claro original */
+    --cinza-fundo: #F5F5F5;    /* Cinza muito claro para o corpo */
+    --cinza-escuro: #333333;  /* Cinza escuro para texto */
+    --cinza-detalhe: #E0E0E0; /* Cinza para divisões/bordas */
     --branco: #FFFFFF;
-    --vermelho-destaque: #FF0000; /* Novo, para testar o destaque no h1 */
 }
 
 /* Reset Básico e Fonte */
@@ -45,7 +44,7 @@ body {
 
 .header h1 {
     font-size: 1.8em;
-    color: var(--vermelho-destaque); /* DESTAQUE EM VERMELHO PARA TESTE */
+    color: var(--roxo-principal); /* Nome da empresa de volta ao roxo principal */
 }
 
 .header nav ul {
@@ -83,7 +82,7 @@ body {
 
 .section h2 {
     text-align: center;
-    color: var(--roxo-principal); /* Cor principal ametista aqui */
+    color: var(--roxo-principal);
     margin-bottom: 40px;
     font-size: 2.2em;
     border-bottom: 2px solid var(--roxo-claro);
@@ -100,106 +99,6 @@ body {
 }
 
 .perfil-section h3 {
-    color: var(--roxo-principal); /* Cor principal ametista aqui */
+    color: var(--roxo-principal);
     margin-top: 30px;
     margin-bottom: 15px;
-    border-left: 4px solid var(--roxo-principal);
-    padding-left: 10px;
-}
-
-.destaque {
-    font-weight: 700;
-    padding: 15px;
-    /* Usando a cor principal, mas mais transparente */
-    background-color: rgba(95, 89, 121, 0.05); 
-    border-left: 5px solid var(--roxo-principal);
-    margin-top: 30px;
-}
-
-/* ESTILO DA IMAGEM DE ARMAZÉM */
-.img-destaque-perfil {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 40px auto;
-    border-radius: 8px;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-}
-
-/* Grid de Habilidades */
-.skills-grid {
-    display: flex;
-    gap: 30px;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.skill-card {
-    background-color: var(--branco);
-    border: 1px solid var(--cinza-detalhe);
-    border-top: 5px solid var(--roxo-principal); /* Detalhe roxo aqui */
-    padding: 25px;
-    width: 300px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.skill-card:hover {
-    transform: translateY(-5px);
-    /* Sombra com o roxo principal transparente */
-    box-shadow: 0 8px 12px rgba(95, 89, 121, 0.2); 
-}
-
-.skill-card h3 {
-    color: var(--roxo-principal); /* Cor principal ametista aqui */
-    margin-bottom: 10px;
-    font-size: 1.4em;
-}
-
-/* ESTILO DA IMAGEM DE DASHBOARD */
-.img-destaque-habilidades {
-    max-width: 90%;
-    height: auto;
-    display: block;
-    margin: 40px auto 60px auto;
-    border-radius: 8px;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-    border: 1px solid var(--cinza-detalhe);
-}
-
-
-/* Botão de Contato */
-.contato-section {
-    text-align: center;
-}
-
-.contato-section p {
-    font-size: 1.2em;
-    margin-bottom: 30px;
-}
-
-.btn {
-    display: inline-block;
-    background-color: var(--roxo-principal); /* Cor principal ametista aqui */
-    color: var(--branco);
-    padding: 15px 30px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    transition: background-color 0.3s, transform 0.2s;
-}
-
-.btn:hover {
-    background-color: var(--roxo-claro); /* Roxo mais claro aqui */
-    transform: translateY(-2px);
-}
-
-/* Rodapé (Footer) */
-.footer {
-    background-color: var(--cinza-escuro);
-    color: var(--cinza-detalhe);
-    padding: 20px 0;
-    text-align: center;
-    font-size: 0.9em;
-}

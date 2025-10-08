@@ -194,3 +194,68 @@ body {
 .contato-info .telemovel a:hover {
     text-decoration: underline;
 }
+
+/* ================================================= */
+/* MEDIA QUERIES (RESPONSIVIDADE PARA CELULARES)     */
+/* ================================================= */
+
+@media (max-width: 768px) {
+    
+    /* 1. Ajuste Geral das Seções e Títulos */
+    .section {
+        padding: 40px 0; /* Reduz o espaçamento vertical em telas pequenas */
+    }
+
+    .section h2 {
+        font-size: 1.8em; /* Reduz o tamanho do título principal */
+        margin-bottom: 30px;
+    }
+    
+    /* 2. Ajuste do Cabeçalho para Telas Estreitas */
+    .header .container {
+        flex-direction: column; /* Coloca o logo e a navegação um abaixo do outro */
+        text-align: center;
+    }
+    
+    .header h1 {
+        margin-bottom: 10px;
+    }
+    
+    .header nav ul {
+        padding: 0;
+        margin-top: 5px;
+        /* Garante que os itens de navegação se ajustem melhor */
+        justify-content: center;
+    }
+    
+    .header nav ul li {
+        margin: 0 10px; /* Reduz o espaçamento horizontal entre os links */
+    }
+
+    /* 3. Ajuste Fino nas Imagens */
+    .img-destaque-perfil,
+    .img-destaque-habilidades {
+        margin: 30px auto; /* Reduz a margem das imagens */
+        /* Garante que as imagens não fiquem muito grandes em telas verticais */
+        max-width: 100%; 
+        border-radius: 4px; /* Cantos levemente menos arredondados */
+        box-shadow: none; /* Remove a sombra pesada para um visual mais limpo no celular */
+    }
+
+    /* 4. Layout da Grid de Habilidades (De Colunas para Linhas) */
+    .skills-grid {
+        flex-direction: column; /* Coloca os cards um abaixo do outro */
+        gap: 20px;
+    }
+
+    .skill-card {
+        width: 100%; /* Faz com que o card ocupe toda a largura */
+        padding: 20px;
+    }
+    
+    /* 5. Layout da Grid de Projetos (De Colunas para Linhas) */
+    .projetos-grid {
+        grid-template-columns: 1fr; /* Uma única coluna */
+        gap: 20px;
+    }
+}

@@ -171,3 +171,26 @@ body {
     }
 }
     
+/* Estilos para o novo Bloco de Telemóvel na seção Contato */
+.contato-info {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid var(--cinza-detalhe);
+    display: inline-block; /* Faz o bloco se ajustar ao conteúdo */
+    text-align: center;
+}
+
+.contato-info p {
+    font-size: 1.1em;
+    margin-bottom: 5px;
+}
+
+.contato-info .telemovel a {
+    color: var(--roxo-principal); /* Destaca o link do telefone em roxo */
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.contato-info .telemovel a:hover {
+    text-decoration: underline;
+}

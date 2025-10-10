@@ -3,7 +3,7 @@
     --roxo-principal: #6A1B9A; /* O roxo vibrante original */
     --roxo-claro: #9C27B0;   /* O roxo mais claro original */
     --cinza-fundo: #F5F5F5;    /* Cinza muito claro para o corpo */
-    --cinza-escuro: #333333;  /* Cinza escuro para texto */
+    --cinza-escuro: #60d3ff;  /* Cinza escuro para texto */
     --cinza-detalhe: #E0E0E0; /* Cinza para divisões/bordas */
     --branco: #FFFFFF;
 }
@@ -301,5 +301,6 @@ body {
         gap: 20px;
     }
 }
+
 
 

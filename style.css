@@ -1,9 +1,9 @@
-/* Paleta de Cores */
+/* Paleta de Cores (Roxo e Azul) */
 :root {
-    --roxo-principal: #6A1B9A; /* O roxo vibrante original */
-    --roxo-claro: #9C27B0;   /* O roxo mais claro original */
+    --roxo-principal: #6A1B9A; /* Roxo para títulos e botões principais */
+    --azul-acento: #007BFF;   /* Azul para detalhes, hover e linhas */
     --cinza-fundo: #F5F5F5;    /* Cinza muito claro para o corpo */
-    --cinza-escuro: #60d3ff;  /* Cinza escuro para texto */
+    --cinza-escuro: #333333;  /* Preto/Cinza Escuro para texto (Melhor contraste) */
     --cinza-detalhe: #E0E0E0; /* Cinza para divisões/bordas */
     --branco: #FFFFFF;
 }
@@ -12,15 +12,7 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
-
-/* Reset Básico e Fonte */
-* {
-    margin: 0;
-    padding: 0;
-    /* Esta linha é a mais importante para evitar quebra de layout */
-    box-sizing: border-box; 
+    box-sizing: border-box; /* Essencial para a responsividade */
 }
 
 body {
@@ -28,8 +20,7 @@ body {
     line-height: 1.6;
     color: var(--cinza-escuro);
     background-color: var(--cinza-fundo);
-    /* NOVA REGRA DE SEGURANÇA: Impede rolagem lateral */
-    overflow-x: hidden; 
+    overflow-x: hidden; /* CORREÇÃO FINAL DE RESPONSIVIDADE HORIZONTAL */
 }
 
 .container {
@@ -54,7 +45,7 @@ body {
 
 .header h1 {
     font-size: 1.8em;
-    color: var(--roxo-principal); /* Nome da empresa de volta ao roxo principal */
+    color: var(--roxo-principal); /* Nome da empresa em Roxo */
 }
 
 .header nav ul {
@@ -74,7 +65,7 @@ body {
 }
 
 .header nav ul li a:hover {
-    color: var(--roxo-principal);
+    color: var(--azul-acento); /* Destaque no hover em AZUL */
 }
 
 /* Estilos das Seções */
@@ -95,7 +86,7 @@ body {
     color: var(--roxo-principal);
     margin-bottom: 40px;
     font-size: 2.2em;
-    border-bottom: 2px solid var(--roxo-claro);
+    border-bottom: 2px solid var(--azul-acento); /* Linha divisória em AZUL */
     display: inline-block;
     padding-bottom: 5px;
     margin-left: 50%;
@@ -112,15 +103,72 @@ body {
     color: var(--roxo-principal);
     margin-top: 30px;
     margin-bottom: 15px;
+    border-left: 4px solid var(--azul-acento); /* Detalhe lateral em AZUL */
+    padding-left: 10px;
+}
+
+.destaque {
+    font-weight: 700;
+    padding: 15px;
+    background-color: rgba(106, 27, 154, 0.05); /* Roxo transparente */
+    border-left: 5px solid var(--roxo-principal);
+    margin-top: 30px;
+}
+
+/* ESTILO DAS IMAGENS */
+.img-destaque-perfil,
+.img-destaque-habilidades {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 40px auto;
+    border-radius: 8px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+/* Apenas para o dashboard ter uma borda mais visível */
+.img-destaque-habilidades {
+    border: 1px solid var(--cinza-detalhe);
+    margin-bottom: 60px;
+}
+
+
+/* Grid de Habilidades */
+.skills-grid {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.skill-card {
+    background-color: var(--branco);
+    border: 1px solid var(--cinza-detalhe);
+    border-top: 5px solid var(--azul-acento); /* Detalhe no topo em AZUL */
+    padding: 25px;
+    width: 300px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 123, 255, 0.2); /* Sombra do hover em AZUL transparente */
+}
+
+.skill-card h3 {
+    color: var(--roxo-principal);
+    margin-bottom: 10px;
+    font-size: 1.4em;
+}
 
 /* ESTILOS DA SEÇÃO PROJETOS */
 .projetos-section {
-    background-color: var(--branco); /* Fundo branco para destacar os cards */
+    background-color: var(--branco); 
 }
 
 .projetos-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* 2 ou 3 colunas */
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); 
     gap: 30px;
     margin-top: 50px;
     justify-content: center;
@@ -129,7 +177,7 @@ body {
 .projeto-card {
     background-color: var(--cinza-fundo);
     border: 1px solid var(--cinza-detalhe);
-    border-top: 5px solid var(--roxo-principal);
+    border-top: 5px solid var(--roxo-principal); /* Detalhe no topo em ROXO */
     padding: 30px;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
@@ -148,15 +196,11 @@ body {
     margin-bottom: 15px;
 }
 
-.projeto-card p {
-    font-size: 1em;
-    margin-bottom: 10px;
-}
-
 .projeto-icon {
     font-size: 2.5em;
     display: block;
     margin-bottom: 10px;
+    color: var(--azul-acento); /* Ícone em AZUL */
 }
 
 .resultado {
@@ -174,19 +218,40 @@ body {
     color: var(--roxo-principal);
 }
 
-/* Garante que o grid funcione bem em telas menores */
-@media (max-width: 768px) {
-    .projetos-grid {
-        grid-template-columns: 1fr; /* Uma única coluna em telas pequenas */
-    }
+
+/* Botão de Contato */
+.contato-section {
+    text-align: center;
 }
-    
-/* Estilos para o novo Bloco de Telemóvel na seção Contato */
+
+.contato-section p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--roxo-principal);
+    color: var(--branco);
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn:hover {
+    background-color: var(--azul-acento); /* Hover do botão em AZUL */
+    transform: translateY(-2px);
+}
+
+/* Estilos para o Bloco de Contato (Telemóvel/WhatsApp) */
 .contato-info {
     margin-top: 40px;
     padding-top: 20px;
     border-top: 1px solid var(--cinza-detalhe);
-    display: inline-block; /* Faz o bloco se ajustar ao conteúdo */
+    display: inline-block;
     text-align: center;
 }
 
@@ -196,13 +261,23 @@ body {
 }
 
 .contato-info .telemovel a {
-    color: var(--roxo-principal); /* Destaca o link do telefone em roxo */
+    color: var(--azul-acento); /* Link do WhatsApp em AZUL */
     text-decoration: none;
     font-weight: 700;
 }
 
 .contato-info .telemovel a:hover {
     text-decoration: underline;
+}
+
+
+/* Rodapé (Footer) */
+.footer {
+    background-color: var(--cinza-escuro);
+    color: var(--cinza-detalhe);
+    padding: 20px 0;
+    text-align: center;
+    font-size: 0.9em;
 }
 
 /* ================================================= */
@@ -213,35 +288,17 @@ body {
     
     /* 1. Ajuste Geral das Seções e Títulos */
     .section {
-        padding: 40px 0; /* Reduz o espaçamento vertical em telas pequenas */
+        padding: 40px 0;
     }
 
-@media (max-width: 768px) {
-    /* ... outras regras ... */
-
-    /* AJUSTE CORRIGIDO E DEFINITIVO NAS IMAGENS */
-    .img-destaque-perfil,
-    .img-destaque-habilidades {
-        display: block; 
-        max-width: 100%;
-        height: auto; 
-        margin: 30px auto; 
-        padding: 0; 
-        box-sizing: border-box;
-        box-shadow: none; 
-    }
-    
-    /* ... outras regras ... */
-}
-    
     .section h2 {
-        font-size: 1.8em; /* Reduz o tamanho do título principal */
+        font-size: 1.8em; 
         margin-bottom: 30px;
     }
     
     /* 2. Ajuste do Cabeçalho para Telas Estreitas */
     .header .container {
-        flex-direction: column; /* Coloca o logo e a navegação um abaixo do outro */
+        flex-direction: column; 
         text-align: center;
     }
     
@@ -252,55 +309,39 @@ body {
     .header nav ul {
         padding: 0;
         margin-top: 5px;
-        /* Garante que os itens de navegação se ajustem melhor */
         justify-content: center;
     }
     
     .header nav ul li {
-        margin: 0 10px; /* Reduz o espaçamento horizontal entre os links */
+        margin: 0 10px; 
     }
 
-/* 3. Ajuste Fino nas Imagens */
-.img-destaque-perfil,
-.img-destaque-habilidades {
-    margin: 30px auto; /* Reduz a margem das imagens */
-    /* Garante que as imagens não fiquem muito grandes em telas verticais */
-    max-width: 100%; 
-    border-radius: 4px; /* Cantos levemente menos arredondados */
-    box-shadow: none; /* Remove a sombra pesada para um visual mais limpo no celular */
-}
+    /* 3. Ajuste Definitivo nas Imagens */
+    .img-destaque-perfil,
+    .img-destaque-habilidades {
+        display: block; 
+        max-width: 100%;
+        height: auto; 
+        margin: 30px auto; 
+        padding: 0; 
+        box-sizing: border-box; 
+        box-shadow: none; 
+    }
 
-/* 3. AJUSTE CORRIGIDO E DEFINITIVO NAS IMAGENS */
-.img-destaque-perfil,
-.img-destaque-habilidades {
-    /* O display: block é crucial para garantir que a max-width funcione */
-    display: block; 
-    max-width: 100%;
-    height: auto; /* Garante que a proporção seja mantida */
-    margin: 30px auto; 
-    padding: 0; /* Remove qualquer padding que possa estar causando overflow */
-    border-radius: 4px; 
-    box-sizing: border-box; /* Garante que padding e border não aumentem a largura */
-    box-shadow: none; /* Mantém o visual limpo no celular */
-}
-    
     /* 4. Layout da Grid de Habilidades (De Colunas para Linhas) */
     .skills-grid {
-        flex-direction: column; /* Coloca os cards um abaixo do outro */
+        flex-direction: column; 
         gap: 20px;
     }
 
     .skill-card {
-        width: 100%; /* Faz com que o card ocupe toda a largura */
+        width: 100%; 
         padding: 20px;
     }
     
     /* 5. Layout da Grid de Projetos (De Colunas para Linhas) */
     .projetos-grid {
-        grid-template-columns: 1fr; /* Uma única coluna */
+        grid-template-columns: 1fr; 
         gap: 20px;
     }
 }
-
-
-

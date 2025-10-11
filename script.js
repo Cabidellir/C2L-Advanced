@@ -24,3 +24,67 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     });
 });
+// =================================================
+// 241 Solutions - FUNCIONALIDADE DO CARROSSEL HERO
+// =================================================
+
+document.addEventListener('DOMContentLoaded', () => {
+    
+    // Elementos do DOM
+    const slides = document.querySelectorAll('.slide');
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
+    const container = document.querySelector('.slides-container');
+    
+    let currentSlide = 0;
+    const totalSlides = slides.length;
+    const slideDuration = 7000; // 7 segundos
+
+    // Função para atualizar a exibição do slide
+    function updateSlider() {
+        // Calcula a posição do slide para a transição CSS
+        const offset = -currentSlide * 100;
+        container.style.transform = `translateX(${offset}%)`;
+    }
+
+    // Função para mostrar o próximo slide
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        updateSlider();
+    }
+
+    // Função para mostrar o slide anterior
+    function prevSlide() {
+        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+        updateSlider();
+    }
+
+    // Event Listeners para os botões manuais
+    if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+            nextSlide();
+            // Reseta o temporizador ao interagir manualmente
+            resetAutoPlay();
+        });
+    }
+
+    if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+            prevSlide();
+            // Reseta o temporizador ao interagir manualmente
+            resetAutoPlay();
+        });
+    }
+
+    // Autoplay: Troca de slide automática
+    let slideInterval = setInterval(nextSlide, slideDuration);
+
+    // Função para resetar o temporizador de autoplay
+    function resetAutoPlay() {
+        clearInterval(slideInterval);
+        slideInterval = setInterval(nextSlide, slideDuration);
+    }
+
+    // Inicia o carrossel (mostra o primeiro slide)
+    updateSlider();
+});

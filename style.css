@@ -2,7 +2,7 @@
 :root {
     --roxo-principal: #6A1B9A; /* Roxo para títulos e botões principais */
     --azul-acento: #007BFF;   /* Azul para detalhes, hover e linhas */
-    --cinza-fundo: #F5F5F5;    /* Cinza muito claro para o corpo */
+    --cinza-fundo: #F5F5F5;   /* Cinza muito claro para o corpo */
     --cinza-escuro: #333333;  /* Preto/Cinza Escuro para texto (Melhor contraste) */
     --cinza-detalhe: #E0E0E0; /* Cinza para divisões/bordas */
     --branco: #FFFFFF;
@@ -65,8 +65,9 @@ body {
     transition: color 0.3s;
 }
 
+/* Cor de hover dos links ajustada para roxo */
 .header nav ul li a:hover {
-    color: var(--azul-acento); 
+    color: var(--roxo-principal); 
 }
 
 /* Estilos das Seções */
@@ -94,7 +95,145 @@ body {
     transform: translateX(-50%);
 }
 
-/* Estilos da Seção Perfil */
+/* ================================================= */
+/* NOVO ESTILO: HERO SLIDER (ESTILO ALAIRE)          */
+/* ================================================= */
+
+.hero-slider {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Ocupa a altura total da tela */
+    overflow: hidden;
+    padding: 0; /* Remove padding padrão de section */
+}
+
+.slides-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    /* Removido transition aqui, pois será manipulado por JS para animação de slide */
+}
+
+.slide {
+    flex: 0 0 100%; /* Cada slide ocupa exatamente 100% da largura */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: center; /* Alinha o conteúdo verticalmente */
+    justify-content: center; /* Alinha o conteúdo horizontalmente */
+    color: var(--branco);
+    text-align: center;
+    transition: background-image 0.5s ease-in-out; /* Adiciona transição suave no background se você mudar a imagem diretamente */
+}
+
+/* Efeito de sobreposição (escurece a imagem para o texto branco sobressair, como no Alaire) */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Escuro com 40% de opacidade */
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 20px;
+}
+
+.hero-content h1 {
+    font-size: 3.5em;
+    color: var(--branco);
+    margin-bottom: 20px;
+    line-height: 1.2;
+    /* Remove estilos de h2 para este h1, ele é um título de impacto */
+    border-bottom: none; 
+    display: block;
+    transform: none;
+    margin-left: 0;
+}
+
+.hero-content p {
+    font-size: 1.5em;
+    font-weight: 300;
+    margin-bottom: 40px;
+}
+
+/* Estilo para o Botão de Chamada para Ação (CTA) dentro do Hero */
+.btn-hero {
+    display: inline-block;
+    background-color: var(--roxo-principal);
+    color: var(--branco);
+    padding: 15px 35px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 1.1em;
+    letter-spacing: 1px;
+    transition: background-color 0.3s, transform 0.2s;
+    border: 2px solid var(--roxo-principal);
+}
+
+.btn-hero:hover {
+    background-color: var(--azul-acento); 
+    border-color: var(--azul-acento);
+    transform: translateY(-2px);
+}
+
+/* Estilo para a Linha de Divisão (Como a linha branca no Alaire) */
+.hero-slider::after {
+    content: '';
+    position: absolute;
+    bottom: 50px; /* Ajuste a altura desta linha */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    max-width: 1000px;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.6);
+    z-index: 2;
+}
+
+/* Estilo dos botões de navegação do carrossel */
+.prev-btn, .next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.3);
+    color: white;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    z-index: 10;
+    font-size: 2em;
+    transition: background 0.3s;
+    user-select: none;
+    border-radius: 4px;
+}
+
+.prev-btn:hover, .next-btn:hover {
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.prev-btn {
+    left: 20px;
+}
+
+.next-btn {
+    right: 20px;
+}
+
+/* ================================================= */
+/* FIM DO NOVO ESTILO HERO SLIDER                    */
+/* ================================================= */
+
+/* Estilos da Seção Perfil (Removidos, pois a seção Perfil foi substituída por Hero) */
+/* OBS: Os estilos de .perfil-section não são mais necessários, mas vou mantê-los abaixo para evitar erros em outras seções que possam ter usado as mesmas classes. */
+
 .perfil-section p {
     margin-bottom: 15px;
     font-size: 1.1em;
@@ -166,7 +305,8 @@ body {
 }
 
 
-/* ESTILO DAS IMAGENS GERAIS */
+/* ESTILO DAS IMAGENS GERAIS (REMOVIDO PARA EVITAR CONFLITO COM HERO SLIDER) */
+/* Vou manter as classes, mas você pode remover as imagens no HTML, se desejar */
 .img-destaque-perfil,
 .img-destaque-habilidades {
     max-width: 100%;
@@ -402,5 +542,23 @@ body {
         grid-template-columns: 1fr; 
         gap: 20px;
     }
-}
 
+    /* 5. Responsividade do HERO SLIDER */
+    .hero-content h1 {
+        font-size: 2.2em; /* Reduz o tamanho do título principal */
+    }
+    .hero-content p {
+        font-size: 1.2em; /* Reduz o tamanho do subtítulo */
+    }
+    .prev-btn, .next-btn {
+        padding: 10px;
+        font-size: 1.5em;
+    }
+    .btn-hero {
+        padding: 12px 25px; /* Reduz o tamanho do botão */
+    }
+    /* Remove a linha divisória em telas pequenas para clareza */
+    .hero-slider::after {
+        display: none; 
+    }
+}

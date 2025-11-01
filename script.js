@@ -1,4 +1,4 @@
-/**
+/**js
  * 241 Solutions - Scroll Suave para Links de Navegação
  * Otimiza a navegação do usuário tornando os saltos entre seções suaves.
  */
